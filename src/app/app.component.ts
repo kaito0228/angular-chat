@@ -20,4 +20,11 @@ const COMMENTS: Comment[] = [
 export class AppComponent {
   comments = COMMENTS;
   currentUser = CURRENT_USER;
+  content = '';
+
+  addComment(comment: string): void {
+    if (comment) {
+      this.comments.push(new Comment(this.currentUser, comment));
+    }
+  }
 }
